@@ -11,8 +11,6 @@ public class ServicePictureVO {
     @Id
     private Integer servicePicNo;
 
-//    private Integer recordNo;
-
     @Column(columnDefinition = "longblob")
     private Byte[] servicePic;
 
@@ -28,15 +26,16 @@ public class ServicePictureVO {
         this.servicePicNo = servicePicNo;
     }
 
-//    public Integer getRecordNo() {
-//        return recordNo;
-//    }
 
-//    public void setRecordNo(Integer recordNo) {
-//        this.recordNo = recordNo;
-//    }
+    public ServiceRecordVO getServiceRecordVO() {
+		return serviceRecordVO;
+	}
 
-    public Byte[] getServicePic() {
+	public void setServiceRecordVO(ServiceRecordVO serviceRecordVO) {
+		this.serviceRecordVO = serviceRecordVO;
+	}
+
+	public Byte[] getServicePic() {
         return servicePic;
     }
 

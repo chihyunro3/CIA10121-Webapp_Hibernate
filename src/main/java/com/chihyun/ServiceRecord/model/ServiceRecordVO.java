@@ -12,11 +12,9 @@ public class ServiceRecordVO {
 
 	@Id
 	private Integer recordNo;
-
-    private Integer admNo;
-    private Integer memNo;
     
     private Timestamp recordTime;
+    
     private String recordContent;
     
     @Column(name = "speaker", columnDefinition = "TINYINT")
@@ -25,6 +23,38 @@ public class ServiceRecordVO {
     @OneToMany(mappedBy = "serviceRecordVO")
     @OrderBy("servicePicNo asc")
     private Set<ServicePictureVO> ServicePictures;
+    
+//    @ManyToOne
+//    @JoinColumn(name = "admNo", referencedColumnName = "admNo")
+//    private AdministratorVO Administrator;
+    
+    public Set<ServicePictureVO> getServicePictures() {
+		return ServicePictures;
+	}
+
+	public void setServicePictures(Set<ServicePictureVO> servicePictures) {
+		ServicePictures = servicePictures;
+	}
+
+//	public AdministratorVO getAdministrator() {
+//		return Administrator;
+//	}
+//
+//	public void setAdministrator(AdministratorVO administrator) {
+//		Administrator = administrator;
+//	}
+//
+//	public MemberVO getMemberVO() {
+//		return memberVO;
+//	}
+//
+//	public void setMemberVO(MemberVO memberVO) {
+//		this.memberVO = memberVO;
+//	}
+//
+//	@ManyToOne
+//    @JoinColumn(name = "memNo", referencedColumnName = "memNo")
+//    private MemberVO memberVO;
 
     public Integer getRecordNo() {
         return recordNo;
@@ -32,22 +62,6 @@ public class ServiceRecordVO {
 
     public void setRecordNo(Integer recordNo) {
         this.recordNo = recordNo;
-    }
-
-    public Integer getAdmNo() {
-        return admNo;
-    }
-
-    public void setAdmNo(Integer admNo) {
-        this.admNo = admNo;
-    }
-
-    public Integer getMemNo() {
-        return memNo;
-    }
-
-    public void setMemNo(Integer memNo) {
-        this.memNo = memNo;
     }
 
     public Timestamp getRecordTime() {
