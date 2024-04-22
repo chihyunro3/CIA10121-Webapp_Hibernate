@@ -1,4 +1,4 @@
-package com.chihyun.ServiceRobot.model;
+package com.chihyun.serviceRobot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

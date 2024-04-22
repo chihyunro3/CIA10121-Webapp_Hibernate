@@ -1,3 +1,8 @@
+import com.chihyun.coupon.model.CouponVO;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -15,6 +20,16 @@ public class Test {
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
 
+        CouponVO coupon = new CouponVO();
+        coupon.setCoupName("驚喜大禮test");
+        coupon.setCoupCond("滿萬送千");
+        coupon.setCoupDisc(BigDecimal.valueOf(0.5));
+        coupon.setCoupAddDate(java.sql.Timestamp.valueOf(LocalDateTime.now()));
+        coupon.setCoupExpDate(java.sql.Timestamp.valueOf("2024-04-30 00:00:00"));
+        coupon.setCoupRelDate(java.sql.Timestamp.valueOf("2024-05-01 00:00:00"));
+        coupon.setCoupRelStat(0);
+
+        session.save(coupon);
 
         tx.commit();
         session.close();

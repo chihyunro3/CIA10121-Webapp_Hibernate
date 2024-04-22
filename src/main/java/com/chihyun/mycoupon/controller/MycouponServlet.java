@@ -1,4 +1,4 @@
-package com.chihyun.Mycoupon.controller;
+package com.chihyun.mycoupon.controller;
 
 import javax.servlet.http.HttpServlet;
 

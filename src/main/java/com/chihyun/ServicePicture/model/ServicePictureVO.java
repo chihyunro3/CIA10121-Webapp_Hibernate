@@ -1,6 +1,6 @@
-package com.chihyun.ServicePicture.model;
+package com.chihyun.servicePicture.model;
 
-import com.chihyun.ServiceRecord.model.ServiceRecordVO;
+import com.chihyun.serviceRecord.model.ServiceRecordVO;
 
 import javax.persistence.*;
 

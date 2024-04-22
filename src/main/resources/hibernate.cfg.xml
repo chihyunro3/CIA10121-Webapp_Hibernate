@@ -15,12 +15,12 @@
     	<property name="hibernate.current_session_context_class">thread</property>
     	<property name="hibernate.format_sql">true</property>
 
-        <mapping class="com.chihyun.Mycoupon.model.MycouponVO"/>
-        <mapping class="com.chihyun.Coupon.model.CouponVO"/>
-        <mapping class="com.chihyun.News.model.NewsVO"/>
-		<mapping class="com.chihyun.ServiceRobot.model.ServiceRobotVO"/>
-		<mapping class="com.chihyun.ServiceRecord.model.ServiceRecordVO"/>
-		<mapping class="com.chihyun.ServicePicture.model.ServicePictureVO"/>        
+        <mapping class="com.chihyun.mycoupon.model.MycouponVO"/>
+        <mapping class="com.chihyun.coupon.model.CouponVO"/>
+        <mapping class="com.chihyun.news.model.NewsVO"/>
+		<mapping class="com.chihyun.serviceRobot.model.ServiceRobotVO"/>
+		<mapping class="com.chihyun.serviceRecord.model.ServiceRecordVO"/>
+		<mapping class="com.chihyun.servicePicture.model.ServicePictureVO"/>        
 
     </session-factory>
 </hibernate-configuration>

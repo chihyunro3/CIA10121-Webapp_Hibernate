@@ -1,9 +1,9 @@
-package com.chihyun.ServiceRecord.model;
+package com.chihyun.serviceRecord.model;
 
-import com.chihyun.ServicePicture.model.ServicePictureVO;
+import com.chihyun.servicePicture.model.ServicePictureVO;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Set;
 
 @Entity
@@ -15,8 +15,11 @@ public class ServiceRecordVO {
 
     private Integer admNo;
     private Integer memNo;
-    private Date recordTime;
+    
+    private Timestamp recordTime;
     private String recordContent;
+    
+    @Column(name = "speaker", columnDefinition = "TINYINT")
     private Integer speaker;
 
     @OneToMany(mappedBy = "serviceRecordVO")
@@ -47,11 +50,11 @@ public class ServiceRecordVO {
         this.memNo = memNo;
     }
 
-    public Date getRecordTime() {
+    public Timestamp getRecordTime() {
         return recordTime;
     }
 
-    public void setRecordTime(Date recordTime) {
+    public void setRecordTime(Timestamp recordTime) {
         this.recordTime = recordTime;
     }
 

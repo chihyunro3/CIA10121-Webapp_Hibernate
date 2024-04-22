@@ -1,24 +1,29 @@
-package com.chihyun.Mycoupon.model;
+package com.chihyun.mycoupon.model;
 
-import com.chihyun.Coupon.model.CouponVO;
+import com.chihyun.coupon.model.CouponVO;
 
 import javax.persistence.*;
-import java.awt.*;
 import java.io.Serializable;
-import java.lang.reflect.Member;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Mycoupon")
 @IdClass(MycouponVO.CompositeMycoupon.class)
 public class MycouponVO {
     @Id
+    @Column(name = "coupNo", updatable = false, insertable = false)
     private Integer coupNo;
+    
     @Id
     private Integer memNo;
+    
+    @Column(name = "coupUsedStat", columnDefinition = "TINYINT")
     private Integer coupUsedStat;
+    
     private String coupInfo;
-    private Date coupExpDate;
+    
+    private Timestamp coupExpDate;
 
     @ManyToOne
     @JoinColumn(name = "coupNo", referencedColumnName = "coupNo")
@@ -70,11 +75,11 @@ public class MycouponVO {
         this.coupInfo = coupInfo;
     }
 
-    public Date getCoupExpDate() {
+    public Timestamp getCoupExpDate() {
         return coupExpDate;
     }
 
-    public void setCoupExpDate(Date coupExpDate) {
+    public void setCoupExpDate(Timestamp coupExpDate) {
         this.coupExpDate = coupExpDate;
     }
 
